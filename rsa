@@ -3,30 +3,30 @@
 import sys
 
 
-# fn unpack number factorial
-def fc():
+# function unpack number factorial
+def frc():
     """
     function fc to search file to convert number and format n=p*q
     """
     try:
-        revfile = sys.argv[1]
-        with open(revfile) as f:
-            for revnumber in f:
-                revnumber = int(revnumber)
-                if revnumber % 2 == 0:
-                        print("{}={}*{}".format(revnumber, revnumber // 2, 2))
+        revf = sys.argv[1]
+        with open(revf) as f:
+            for revber in f:
+                revber = int(revber)
+                if revber % 2 == 0:
+                        print("{}={}*{}".format(revber, revber // 2, 2))
                         continue
-                i = 3
-                while i < revnumber // 2:
-                    if revnumber % i == 0:
-                        print("{}={}*{}".format(revnumber, revnumber // i, i))
+                u = 3
+                while u < revber // 2:
+                    if revber % u == 0:
+                        print("{}={}*{}".format(revber, revber // u, u))
                         break
-                    i = i + 2
-                if i == (revnumber // 2) + 1:
-                    print("{}={}*{}".format(revnumber, revnumber, 1))
+                    u = u + 2
+                if u == (revber // 2) + 1:
+                    print("{}={}*{}".format(revber, revber, 1))
     except (IndexError):
         pass
 
 
 # autostart
-fc()
+frc()

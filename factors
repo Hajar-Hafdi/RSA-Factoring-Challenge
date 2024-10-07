@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+# library to get arguments
 import sys
 
 def fnc():
-    """function fnc search file to change to num and format n=p*q"""
+    """
+    function fnc search file to change to num and format n=p*q
+    """
     try:
         rfile = sys.argv[1]
         with open(rfile) as f:

@@ -2,24 +2,25 @@
 import sys
 
 def fnc():
-"""function fnc search file to change to num and format n=p*q"""
-try:
-rfile = sys.args[1]
-with open(rfile) as f:
-for rnumber in f:
-rnumber = int(rnumber)
-if rnumber % 2 == 0:
-print("{}={}*{}".format(rnumber, rnumber // 2, 2))
-continue
-u = 3
-while u < rnumber // 2:
-if rnumber % u == 0:
-print("{}={}*{}".format(rnumber, rnumber // u, u))
-break
-u = u + 2
-if u == (rnumber // 2) + 1:
-print("{}={}*{}".format(rnumber, rnumber, 1))
-except (IndexError):
-pass
+    """function fnc search file to change to num and format n=p*q"""
+    try:
+        rfile = sys.argv[1]
+        with open(rfile) as f:
+            for rnumber in f:
+                rnumber = int(rnumber)
+                if rnumber % 2 == 0:
+                    print("{}={}*{}".format(rnumber, rnumber // 2, 2))
+                    continue
+                u = 3
+                while u <= rnumber // 2:
+                    if rnumber % u == 0:
+                        print("{}={}*{}".format(rnumber, rnumber // u, u))
+                        break
+                    u = u + 2
+                    if u == (rnumber // 2) + 1:
+                        print("{}={}*{}".format(rnumber, rnumber, 1))
+    except (IndexError):
+        pass
+
 
 fnc()

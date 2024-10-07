@@ -2,28 +2,31 @@
 # library to get arguments
 import sys
 
-def fnc():
+
+# fn unpack number factorial
+def fc():
     """
-    function fnc search file to change to num and format n=p*q
+    function fc to search file to convert number and format n=p*q
     """
     try:
-        rfile = sys.argv[1]
-        with open(rfile) as f:
-            for rnumber in f:
-                rnumber = int(rnumber)
-                if rnumber % 2 == 0:
-                    print("{}={}*{}".format(rnumber, rnumber // 2, 2))
-                    continue
-                u = 3
-                while u <= rnumber // 2:
-                    if rnumber % u == 0:
-                        print("{}={}*{}".format(rnumber, rnumber // u, u))
+        revfile = sys.argv[1]
+        with open(revfile) as f:
+            for revnumber in f:
+                revnumber = int(revnumber)
+                if revnumber % 2 == 0:
+                        print("{}={}*{}".format(revnumber, revnumber // 2, 2))
+                        continue
+                i = 3
+                while i < revnumber // 2:
+                    if revnumber % i == 0:
+                        print("{}={}*{}".format(revnumber, revnumber // i, i))
                         break
-                    u = u + 2
-                    if u == (rnumber // 2) + 1:
-                        print("{}={}*{}".format(rnumber, rnumber, 1))
+                    i = i + 2
+                if i == (revnumber // 2) + 1:
+                    print("{}={}*{}".format(revnumber, revnumber, 1))
     except (IndexError):
         pass
 
 
-fnc()
+# autostart
+fc()
